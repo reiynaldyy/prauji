@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateKonsumensTable extends Migration
+class CreateKategorisTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,15 +13,10 @@ class CreateKonsumensTable extends Migration
      */
     public function up()
     {
-        Schema::create('konsumens', function (Blueprint $table) {
+        Schema::create('kategoris', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->string('id_user');
-            $table->string('nama_konsumen');
-            $table->string('alamat');
-            $table->string('kota');
-            $table->string('prov');
-            $table->integer('telp');
-            $table->string('email');
+            $table->unsignedBigInteger('id_kategori');
+            $table->string('nama_kategori');
             $table->timestamps();
         });
     }
@@ -33,6 +28,6 @@ class CreateKonsumensTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('konsumens');
+        Schema::dropIfExists('kategoris');
     }
 }

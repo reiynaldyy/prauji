@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreatePembayaransTable extends Migration
+class CreateProvinsisTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,11 +13,10 @@ class CreatePembayaransTable extends Migration
      */
     public function up()
     {
-        Schema::create('pembayarans', function (Blueprint $table) {
+        Schema::create('provinsis', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->string('kode_p');
-            $table->date('tgl_bayar');
-            $table->text('stat_bayar');
+            $table->unsignedBigInteger('id_prov');
+            $table->string('prov2');
             $table->timestamps();
         });
     }
@@ -29,6 +28,6 @@ class CreatePembayaransTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('pembayarans');
+        Schema::dropIfExists('provinsis');
     }
 }

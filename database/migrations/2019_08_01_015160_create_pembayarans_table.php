@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateKonsumensTable extends Migration
+class CreatePembayaransTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,15 +13,15 @@ class CreateKonsumensTable extends Migration
      */
     public function up()
     {
-        Schema::create('konsumens', function (Blueprint $table) {
+        Schema::create('pembayarans', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->string('id_user');
-            $table->string('nama_konsumen');
-            $table->string('alamat');
-            $table->string('kota');
-            $table->string('prov');
-            $table->integer('telp');
-            $table->string('email');
+            $table->string('kode_p');
+            $table->date('tgl_bayar');
+            $table->date('jam_bayar');
+            $table->string('B_ong');
+            $table->text('stat_bayar');
+            $table->date('ttl_bayar');
+            $table->unsignedBigInteger('gbr_bayar');
             $table->timestamps();
         });
     }
@@ -33,6 +33,6 @@ class CreateKonsumensTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('konsumens');
+        Schema::dropIfExists('pembayarans');
     }
 }

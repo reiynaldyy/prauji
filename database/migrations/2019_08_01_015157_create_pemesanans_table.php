@@ -15,12 +15,13 @@ class CreatePemesanansTable extends Migration
     {
         Schema::create('pemesanans', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->string('kode_p');
+            $table->unsignedBigInteger('kode_p');
             $table->date('tanggal');
             $table->integer('jam_p');
             $table->integer('total_harga');
             $table->string('penerima');
             $table->string('agen');
+            $table->string('resi');
 
 
             $table->unsignedBigInteger('id_user')->references('id')->on('produk')->onDelete('CASCADE');
