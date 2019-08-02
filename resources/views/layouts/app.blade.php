@@ -33,18 +33,27 @@
                     <!-- Left Side Of Navbar -->
                     <ul class="navbar-nav mr-auto">
                         @guest
-                        {{--  Kondisi  --}}
-                        @else
+    
                             <li class="nav-item">
-                                <a class="nav-link" href="{{ route('login') }}">Menu 1</a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link" href="{{ route('login') }}">Menu 2</a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link" href="{{ route('login') }}">Menu 3</a>
+                                <a class="nav-link" href="{{ route('login') }}">Sebelum Auth</a>
                             </li>
                         @endguest
+
+                        @auth
+                        <li class="nav-item">
+                                <a class="nav-link" href="{{ route('login') }}">Super Admin</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="{{ route('login') }}">Admin</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="{{ route('login') }}">User</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="{{ route('login') }}">Global User</a>
+                            </li>
+                        @endauth
+
                     </ul>
 
                     <!-- Right Side Of Navbar -->
