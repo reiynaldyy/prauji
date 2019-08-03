@@ -33,13 +33,12 @@
                     <!-- Left Side Of Navbar -->
                     <ul class="navbar-nav mr-auto">
                         @guest
-    
+                        @else
+                        @role('admin')
                             <li class="nav-item">
                                 <a class="nav-link" href="{{ route('login') }}">Sebelum Auth</a>
                             </li>
-                        @endguest
-
-                        @auth
+            
                         <li class="nav-item">
                                 <a class="nav-link" href="{{ route('login') }}">Super Admin</a>
                             </li>
@@ -52,8 +51,8 @@
                             <li class="nav-item">
                                 <a class="nav-link" href="{{ route('login') }}">Global User</a>
                             </li>
-                        @endauth
-
+                            @endguest
+                        @endrole
                     </ul>
 
                     <!-- Right Side Of Navbar -->
